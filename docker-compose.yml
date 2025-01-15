@@ -1,56 +1,54 @@
 services:
-    laravel.test:
-        build:
-            context: './vendor/laravel/sail/runtimes/8.4'
-            dockerfile: Dockerfile
-            args:
-                WWWGROUP: '${WWWGROUP}'
-        image: 'sail-8.4/app'
-        extra_hosts:
-            - 'host.docker.internal:host-gateway'
-        ports:
-            - '${APP_PORT:-80}:80'
-            - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
-        environment:
-            WWWUSER: '${WWWUSER}'
-            LARAVEL_SAIL: 1
-            XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
-            XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
-            IGNITION_LOCAL_SITES_PATH: '${PWD}'
-        volumes:
-            - '.:/var/www/html'
-        networks:
-            - sail
-        depends_on:
-            - mysql
-            - redis
-            - meilisearch
-            - mailpit
-            - selenium
     mysql:
+        container_name: Tests
         image: 'mysql/mysql-server:8.0'
         ports:
-            - '${FORWARD_DB_PORT:-3306}:3306'
+            - '${FORWARD_DB_PORT:-3307}:3306'
         environment:
+            # пароль для root пользователя
             MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+            # хосты, с которых можно подключаться к БД
             MYSQL_ROOT_HOST: '%'
+            # имя БД, которую создает Sail
             MYSQL_DATABASE: '${DB_DATABASE}'
+            # имя пользователя, под которым создает Sail
             MYSQL_USER: '${DB_USERNAME}'
+            # пароль, под которым создает Sail
             MYSQL_PASSWORD: '${DB_PASSWORD}'
+            # позволять пустой пароль
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
         volumes:
+            # файловая система, где хранятся файлы БД
             - 'sail-mysql:/var/lib/mysql'
+            # файл, который будет выполнен при запуске контейнера
             - './vendor/laravel/sail/database/mysql/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh'
         networks:
+            # сеть, к которой подключается контейнер
             - sail
         healthcheck:
+            # команда, которая будет выполнена, чтобы проверить, работает ли контейнер
             test:
                 - CMD
                 - mysqladmin
                 - ping
                 - '-p${DB_PASSWORD}'
+            # количество попыток, которые нужно сделать, чтобы убедиться, что контейнер не работает
             retries: 3
+            # время, которое нужно ждать между попытками
             timeout: 5s
+    phpmyadmin:
+        networks:
+            - sail
+        image: phpmyadmin/phpmyadmin
+        links:
+          - mysql:mysql
+        ports:
+          - 8080:80
+        environment:
+          MYSQL_USERNAME: "${DB_USERNAME}"
+          MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+          PMA_HOST: mysql
+
     redis:
         image: 'redis:alpine'
         ports:
