@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ asset('style.css') }}">
@@ -7,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<header class="container">
+<header>
     <div class="logo">
         <img src="{{ asset('images/jpeg/logo.jpeg') }}" alt="Logo">
     </div>

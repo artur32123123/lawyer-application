@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -12,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $elementCount = 10;
+        $posts = DB::table('posts')->paginate($elementCount);
         return view('post.index', compact('posts'));
     }
 
@@ -29,7 +31,8 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $post = Post::find($id);
+        return view('post.show', compact('post'));
     }
 
     /**
