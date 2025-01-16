@@ -175,3 +175,79 @@ svg {
     background-color: #2563eb;
     color: #ffffff;
 }
+
+
+/* General container styling */
+.motorbike.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+/* Card styling */
+.motorbike-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Image styling */
+.motorbike-card__img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Info section styling */
+.motorbike-card__info {
+    padding: 20px;
+    text-align: left;
+}
+
+.motorbike-card__info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.motorbike-card__info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.motorbike-card__info p:last-child {
+    margin-bottom: 20px;
+}
+
+/* Price styling */
+.motorbike-card__info p:nth-child(3) {
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Back to home link styling */
+.motorbike-card__info a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.motorbike-card__info a:hover {
+    background-color: #3498db;
+    color: white;
+
+}

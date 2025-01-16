@@ -7,5 +7,5 @@ use Illuminate\Support\Facades\Route;
     //     return view('welcome');
     // });
 
-Route::get('/', PostController::class . '@index');
-Route::get('/{id}', PostController::class . '@show')->name('post.show');            
+Route::get('/', PostController::class . '@index')->name('post.index');
+Route::get('/{id}', PostController::class . '@show')->name('post.show');
