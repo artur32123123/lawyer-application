@@ -180,7 +180,7 @@ svg {
 /* General container styling */
 .motorbike.container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #f9f9f9;
@@ -196,7 +196,7 @@ svg {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 600px;
+    max-width: 400px;
     width: 100%;
 }
 
@@ -249,5 +249,4 @@ svg {
 .motorbike-card__info a:hover {
     background-color: #3498db;
     color: white;
-
 }

@@ -16,7 +16,7 @@
                 <p class="desck">Model: {{ $post->title }}</p>
                 <p class="desck">Description: {{ $post->body }}</p>
                 <p class="desck">Price: {{ $post->price . 'р.' }}</p>
-                <a href="{{ route('post.index') }}">Back to home</a>
+                <a href="{{ route('posts.index') }}">Back to home</a>
             </div>
         </div>
     </section>
