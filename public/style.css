@@ -46,14 +46,14 @@ header ul li a{
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100%;
 }
 
 .motorbike-card {
     border: 1px solid black;
     max-width: 250px;
-    width: 100%;
+    width: 950px;
     height: 300px;
     margin-top: 40px;
     display: flex;
@@ -188,7 +188,7 @@ svg {
 }
 
 /* Card styling */
-.motorbike-card {
+/* .motorbike-card {
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -198,7 +198,7 @@ svg {
     overflow: hidden;
     max-width: 400px;
     width: 100%;
-}
+} */
 
 /* Image styling */
 .motorbike-card__img img {

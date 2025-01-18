@@ -15,7 +15,7 @@
         <ul>
             <li><a href="#">Главная</a></li>
             <li><a href="#">О нас</a></li>
-            <li><a href="url('post.') ">Contact</a></li>
+            <li>          <a class="btn btn-sm btn-success" href={{ route('posts.create') }}>Add Post</a></li>
         </ul>
     </div>
     <div class="auth">
