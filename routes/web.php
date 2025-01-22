@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -15,7 +16,6 @@ Route::get('/posts/{post}/edit', PostController::class . '@edit')->name('posts.e
 Route::put('/posts/{post}', PostController::class . '@update')->name('posts.update');
 Route::delete('/posts/{post}', PostController::class . '@destroy')->name('posts.destroy');
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

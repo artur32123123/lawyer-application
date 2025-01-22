@@ -23,10 +23,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $file->move(public_path('\images\form'), $file->getClientOriginalName());
+        }
         $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
+            'price' => 'required',
+            'descount' => 'required',
+            'image' => 'required|image',
         ]);
+        dd(33);
         Post::create($request->all());
         return redirect()->route('posts.index')
             ->with('success', 'Post created successfully.');
@@ -43,6 +51,8 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
+            'price' => 'required',
+            'descount' => 'required',
         ]);
         $post = Post::find($id);
         $post->update($request->all());
