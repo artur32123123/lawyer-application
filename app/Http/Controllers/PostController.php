@@ -23,19 +23,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('img')) {
-            $file = $request->file('img');
-            $file->move(public_path('\images\form'), $file->getClientOriginalName());
-        }
-        $request->validate([
-            'title' => 'required|max:255',
-            'body' => 'required',
-            'price' => 'required',
-            'descount' => 'required',
-            'image' => 'required|image',
+        $file = $request->image; // inputname - это name поля из формы
+        $filecontent = $file->openFile()->fread($file->getSize()); // эта магия из стэковерфлоу
+        //что за openFile() - я не понимаю...
+        $filename = $file->getClientOriginalName();
+        // dd($filename);
+        // $request->validate([
+        //     'title' => 'required|max:255',
+        //     'body' => 'required',
+        //     'price' => 'required',
+        //     'descount' => 'required',
+        //     'image' => 'required|image',
+        // ]);
+        Post::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'price' => $request->price,
+            'descount' => $request->descount,
+            'image' => $filename,
         ]);
-        dd(33);
-        Post::create($request->all());
         return redirect()->route('posts.index')
             ->with('success', 'Post created successfully.');
     }

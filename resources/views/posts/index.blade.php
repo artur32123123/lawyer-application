@@ -20,6 +20,7 @@
                     <h2>{{ $post->title }}</h2>
                     <img src="{{ $post->image }}" alt="Image">
                     <p>{{ $post->price . 'р.' }}</p>
+                    <h1>{{ $post->image }}</h1>
                     <a href="{{ route('posts.show', $post->id) }}">Подробнее</a><a
                         href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-sm">Edit</a>
                     <form action="{{ route('posts.destroy', $post->id) }}" method="post">

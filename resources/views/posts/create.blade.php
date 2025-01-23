@@ -3,9 +3,16 @@
     <div class="row h-100 justify-content-center align-items-center">
         <div class="col-10 col-md-8 col-lg-6">
             <h3>Add a Post</h3>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
-
-
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -24,9 +31,10 @@
                     <input type="number" id="descount" class="form-control" name="descount" required></input>
                 </div>
                 <div class="form-group">
-                    <label for="img">image</label>
-                    <input name="img" required id="img" type="file"/>
+                    <label for="image">image</label>
+                    <input name="image" required id="image" type="file" />
                 </div>
+                {{-- <img src="{{ asset('storage/photos/' . $post->image) }}" alt="Image"> --}}
                 <br>
                 <button type="submit" class="btn btn-primary">Create Post</button>
             </form>
