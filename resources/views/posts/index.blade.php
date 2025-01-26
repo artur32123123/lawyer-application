@@ -20,14 +20,17 @@
                     <h2>{{ $post->title }}</h2>
                     <img src="{{ $post->image }}" alt="Image">
                     <p>{{ $post->price . 'р.' }}</p>
-                    <h1>{{ $post->image }}</h1>
-                    <a href="{{ route('posts.show', $post->id) }}">Подробнее</a><a
-                        href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                    <form action="{{ route('posts.destroy', $post->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
+                    {{-- <h1>{{ $post->image }}</h1> --}}
+                    <a href="{{ route('posts.show', $post->id) }}">Подробнее</a>
+                    <div class="admin-actions">
+
+                        <a href="{{ route('posts.edit', $post->id) }}" >Edit</a>
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
                 </div>
             @endforeach
             {{-- {{ $posts->links() }} --}}
