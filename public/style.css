@@ -13,8 +13,7 @@ header ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    max-width: 800px;
-    width: 100%;
+    width: 400px;
 }
 
 .logo img{
@@ -69,6 +68,16 @@ header ul li a{
     box-shadow: 5px 5px 10px rgb(208, 208, 208);
 }
 
+.add-post {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.add-post:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.063);
+}
 
 .motorbike-card img{
     width: 99%;
@@ -195,27 +204,12 @@ svg {
     min-height: 100vh;
 }
 
-/* Card styling */
-/* .motorbike-card {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 400px;
-    width: 100%;
-} */
-
-/* Image styling */
 .motorbike-card__img img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Info section styling */
 .motorbike-card__info {
     padding: 20px;
     text-align: left;
