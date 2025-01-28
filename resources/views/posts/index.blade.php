@@ -20,7 +20,6 @@
                     <h2>{{ $post->title }}</h2>
                     <img src="{{ $post->image }}" alt="Image">
                     <p>{{ $post->price . 'р.' }}</p>
-                    {{-- <h1>{{ $post->image }}</h1> --}}
                     <a href="{{ route('posts.show', $post->id) }}">Подробнее</a>
                     <div class="admin-actions">
 
