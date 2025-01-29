@@ -20,7 +20,7 @@
                     <h2>{{ $post->title }}</h2>
                     <img src="{{ $post->image }}" alt="Image">
                     <p>{{ $post->price . 'р.' }}</p>
-                    <a href="{{ route('posts.show', $post->id) }}">Подробнее</a>
+                    <a class="post-info" href="{{ route('posts.show', $post->id) }}">Подробнее</a>
                     <div class="admin-actions">
 
                         <a href="{{ route('posts.edit', $post->id) }}" >Edit</a>
@@ -32,7 +32,6 @@
                     </div>
                 </div>
             @endforeach
-            {{-- {{ $posts->links() }} --}}
         </div>
     </section>
 

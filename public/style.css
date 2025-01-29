@@ -49,6 +49,10 @@ header ul li a{
     height: 100%;
 }
 
+.register {
+    width: 300px;
+}
+
 .motorbike-card {
     border: 1px solid black;
     max-width: 250px;
@@ -84,15 +88,23 @@ header ul li a{
     height: 164px;
 }
 
-.motorbike-card a{
-    color: black;
+.post-info {
     margin-bottom: 15px;
+    color: black;
+    text-decoration: unset;
+    font-weight: 900;
+}
+
+.admin-actions a{
+    color: black;
     text-decoration: none;
     transition: 0.4s;
 }
 
-.motorbike-card a:hover {
+.admin-actions a:hover {
     color: red;
+    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.265);
+
 }
 
 
@@ -318,9 +330,12 @@ svg {
     border-radius: 5px;
     cursor: pointer;
   }
-
+  button[type="submit"] {
+    transition: 0.4s;
+  }
   button[type="submit"]:hover {
-    background-color: #3e8e41;
+    color:rgb(73, 109, 18) ;
+    box-shadow: 5px 5px 10px rgba(172, 255, 47, 0.265);
   }
 
   /* Header Styles */

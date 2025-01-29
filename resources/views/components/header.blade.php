@@ -13,15 +13,15 @@
     </div>
     <div class="menu">
         <ul>
-            <li><a href="#">Главная</a></li>
+            <li><a href="{{ route('posts.index') }}">Главная</a></li>
             <li><a href="#">О нас</a></li>
-            <li>          <a class="add-post" href={{ route('posts.create') }}>Добавить пост</a></li>
+            <li> <a class="add-post" href={{ route('posts.create') }}>Добавить пост</a></li>
         </ul>
     </div>
     <div class="auth">
-        <ul>
+        <ul class="register">
             <li><a href="#">Авторизация</a></li>
-            <li><a href="#">Регистрация</a></li>
+            <li><a href="{{ asset('register') }}">Регистрация</a></li>
         </ul>
     </div>
 </header>
