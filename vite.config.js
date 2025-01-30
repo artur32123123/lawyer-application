@@ -13,12 +13,12 @@ export default defineConfig({
         }),
         vue({
             template: {
-                transformAssetUrls: {
-                    base: null,
-                    includeAbsolute: false,
-                },
+              transformAssetUrls: {
+                base: '/',
+                includeAbsolute: false,
+              },
             },
-        }),
+          }),
     ],
     resolve: {
         alias: {

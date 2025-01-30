@@ -21,16 +21,19 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img style="width: 80px; border-radius: 50%;" src="{{ asset('images/jpeg/logo.jpeg') }}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">
+                    </span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li><a href="{{ route('posts.index') }}">Главная</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li> <a class="add-post" href={{ route('posts.create') }}>Добавить пост</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
