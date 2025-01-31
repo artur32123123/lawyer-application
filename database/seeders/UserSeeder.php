@@ -15,14 +15,14 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $developer = Role::where('slug','web-developer')->first();
+        $developer = Role::where('slug','content-manager')->first();
         $manager = Role::where('slug', 'project-manager')->first();
         $createTasks = Permission::where('slug','create-tasks')->first();
         $manageUsers = Permission::where('slug','manage-users')->first();
         $user1 = new User();
         $user1->name = 'Jhon Deo';
         $user1->email = 'jhon@deo.com';
-        $user1->password = bcrypt('secret');
+        $user1->password = 'koha54';
         $user1->save();
         $user1->roles()->attach($developer);
         $user1->permissions()->attach($createTasks);

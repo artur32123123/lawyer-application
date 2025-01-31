@@ -15,7 +15,10 @@
         <ul>
             <li><a href="{{ route('posts.index') }}">Главная</a></li>
             <li><a href="#">О нас</a></li>
-            <li> <a class="add-post" href={{ route('posts.create') }}>Добавить пост</a></li>
+
+            @role('web-developer')
+                <li> <a class="add-post" href={{ route('posts.create') }}>Добавить пост</a></li>
+            @endrole
         </ul>
     </div>
     <div class="auth">
@@ -34,13 +37,14 @@
                 @endif
             @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>

@@ -18,17 +18,26 @@
             @foreach ($posts as $post)
                 <div class="motorbike-card">
                     <h2>{{ $post->title }}</h2>
-                    <img src="{{ $post->image }}" alt="Image">
+                    @foreach ($post->post_images as $image)
+                        @if ($post->post_images->first()->src)
+                            <img class=" {{ $loop->first || $loop->remaining ? 'active' : 'hidden' }}"
+                            src="{{ $post->post_images->first()->src }}" alt="Image">
+                        @else
+                            {{-- <img src="https://via.placeholder.com/150" alt="Image"> --}}
+                        @endif
+                    @endforeach
                     <p>{{ $post->price . 'р.' }}</p>
                     <a class="post-info" href="{{ route('posts.show', $post->id) }}">Подробнее</a>
                     <div class="admin-actions">
+                        @role('content-manager')
+                            <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="post">
 
-                        <a href="{{ route('posts.edit', $post->id) }}" >Edit</a>
-                        <form action="{{ route('posts.destroy', $post->id) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Delete</button>
-                        </form>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">Delete</button>
+                            </form>
+                        @endrole
                     </div>
                 </div>
             @endforeach
