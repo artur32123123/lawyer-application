@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,30 +8,25 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Posts</title>
 </head>
-
 <body>
     <x-header />
-
     <section class="motorbike container">
         <div class="motorbike container">
             @foreach ($posts as $post)
                 <div class="motorbike-card">
                     <h2>{{ $post->title }}</h2>
-                    @foreach ($post->post_images as $image)
-                        @if ($post->post_images->first()->src)
-                            <img class=" {{ $loop->first || $loop->remaining ? 'active' : 'hidden' }}"
-                            src="{{ $post->post_images->first()->src }}" alt="Image">
-                        @else
-                            {{-- <img src="https://via.placeholder.com/150" alt="Image"> --}}
-                        @endif
-                    @endforeach
+                    @if (count($post->post_images) >= 1)
+                        <img src="{{ asset('storage/' . $post->post_images->first()->src) }}"
+                            alt="Описание фотографии">
+                    @else
+                        <img src="{{ asset('storage/') . '/../images/seeder/default.jpeg' }}" alt="image.png">
+                    @endif
                     <p>{{ $post->price . 'р.' }}</p>
                     <a class="post-info" href="{{ route('posts.show', $post->id) }}">Подробнее</a>
-                    <div class="admin-actions">
+                     <div class="admin-actions">
                         @role('content-manager')
                             <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
                             <form action="{{ route('posts.destroy', $post->id) }}" method="post">
-
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">Delete</button>
@@ -43,7 +37,5 @@
             @endforeach
         </div>
     </section>
-
 </body>
-
 </html>
