@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
     <body>
-        <script defer src="{{ asset('js/swiper.js') }}"></script>
+        <s defer src="{{ asset('js/swiper.js') }}"></s cript>
 
     <x-header />
     <section class="motorbike container">
         <div class="motorbike-card">
             <div class="swiper mySwiperClass">
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
+                    <!-- Slidess -->
                     @foreach ($post->post_images as $key => $image)
                         <div class="swiper-slide">
                             <div class="motorbike-card__img">
