@@ -1,14 +1,12 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
-
 Route::get('/', PostController::class . '@index')->name('posts.index');
 Route::get('/posts/create', PostController::class . '@create')->name('posts.create');
 Route::post('/posts', PostController::class . '@store')->name('posts.store');
@@ -18,7 +16,7 @@ Route::put('/posts/{post}', PostController::class . '@update')->name('posts.upda
 Route::delete('/posts/{post}', PostController::class . '@destroy')->name('posts.destroy');
 Route::get('/admin', function () {
 
-})->middleware('role:admin');
+})->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

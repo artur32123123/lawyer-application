@@ -12,7 +12,7 @@
 
     <x-header />
     <section class="motorbike container">
-        <div class="motorbike-card ">
+        <div class="motorbike-card-slider ">
             <div class="swiper mySwiperClass">
                 <div class="swiper-wrapper">
                     @if ($post->post_images->count() > 0)
