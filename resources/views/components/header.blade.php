@@ -17,13 +17,7 @@
         <ul>
             <li><a href="{{ route('posts.index') }}">Главная</a></li>
             <li><a href="#">О нас</a></li>
-            {{-- @role('project-manager')
-                Project Manager Panel
-            @endrole
             @role('web-developer')
-                Web Developer Panel
-            @endrole --}}
-            @role('project-manager')
                 <li> <a class="add-post" href={{ route('posts.create') }}>Добавить пост</a></li>
             @endrole
         </ul>

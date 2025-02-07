@@ -17,11 +17,10 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next, Role ...$role)
     {
-        // dd($request->user());
-        // if (!Auth::check() || Auth::user()->role) {
-        //     // Optionally, you can redirect to a specific page or return a 403 response
-        //     abort(403, 'Unauthorized action.');
-        // }
+        if (!Auth::check() || Auth::user()->role) {
+            // Optionally, you can redirect to a specific page or return a 403 response
+            return redirect('/register');
+        }
 
         return $next($request);
     }

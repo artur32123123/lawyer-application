@@ -198,7 +198,94 @@ class PostSeeder extends Seeder
                 'price' => rand(200000, 4000000),
                 'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
             ],
-
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                 // 'image' => '../images/seeder/img22.jpeg',
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
+            [
+                'title' => $motorcycles[10], // Moto Guzzi
+                'body' => Str::random(10),
+                'price' => rand(200000, 4000000),
+                'descount' => rand(0, 50), // Добавлен ключ 'price' с рандомным числом
+            ],
         ]);
     }
 }

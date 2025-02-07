@@ -14,12 +14,12 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         $manager = new Role();
-        $manager->name = 'Content department';
-        $manager->slug = 'content-manager';
+        $manager->name = 'Project Manager';
+        $manager->slug = 'project-manager';
         $manager->save();
         $developer = new Role();
-        $developer->name = 'Sales-Specialist';
-        $developer->slug = 'sales-specialist';
+        $developer->name = 'Web Developer';
+        $developer->slug = 'web-developer';
         $developer->save();
     }
 }
