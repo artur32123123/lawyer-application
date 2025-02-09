@@ -21,10 +21,11 @@
                     @else
                         <img src="{{ asset('storage/') . '/../images/seeder/default.jpeg' }}" alt="image.png">
                     @endif
-                    <p>{{ $post->price . 'р.' }}</p>
+                    <p style="color: rgb(255, 0, 0)">{{intval($post->price - $post->price / 100 * ($post->descount)) }}  {{ $post->descount }}</p>
+                    <p>{{ number_format($post->price, '0', '.', '.') . 'р.' }}</p>
                     <a class="post-info" href="{{ route('posts.show', $post->id) }}">Подробнее</a>
                      <div class="admin-actions">
-                        @role('content-manager')
+                        @role('project-manager')
                             <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
                             <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                                 @csrf

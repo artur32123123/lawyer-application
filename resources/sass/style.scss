@@ -21,9 +21,10 @@
 .hidden {
     display: none;
 }
+
 .swiper {
-  width: 251px;
-  height: 166px;
+    width: 330px;
+    height: 230px;
 }
 // Variables
 $primary-color: #000000;
@@ -139,11 +140,6 @@ header ul li a {
 
 .hidden {
   display: none;
-}
-
-.swiper {
-  width: 251px;
-  height: 166px;
 }
 
 .motorbike-card img {
@@ -276,15 +272,22 @@ svg {
   min-height: 100vh;
 }
 
-.motorbike-card__img img {
+.motorbike-card__img  {
+    img {
   width: 98%;
   height: auto;
   display: block;
+}
 }
 
 .motorbike-card__info {
   padding: 20px;
   text-align: left;
+  display: flex;
+ flex-direction: column-reverse;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .motorbike-card__info h2 {
@@ -297,6 +300,7 @@ svg {
   font-size: 16px;
   margin-bottom: 10px;
   color: #555;
+  text-align: center;
 }
 
 .motorbike-card__info p:last-child {

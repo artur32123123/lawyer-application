@@ -15,8 +15,8 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $developer = Role::where('slug','web-developer')->first();
-        $manager = Role::where('slug', 'project-manager')->first();
+        $developer = Role::where('slug','project-manager')->first();
+        $manager = Role::where('slug', 'web-developer')->first();
         $createTasks = Permission::where('slug','create-tasks')->first();
         $manageUsers = Permission::where('slug','manage-users')->first();
         $user1 = new User();
