@@ -26,7 +26,6 @@
     width: 330px;
     height: 230px;
 }
-// Variables
 $primary-color: #000000;
 $secondary-color: #ffffff;
 $border-color: #cccccc;
@@ -35,7 +34,6 @@ $font-size: 18px;
 $font-weight: bold;
 $line-height: 1.6;
 
-// General styles
 * {
   margin: 0;
 }
@@ -136,7 +134,6 @@ header ul li a {
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.265);
     }
   }
-
 
 .hidden {
   display: none;
@@ -262,7 +259,6 @@ svg {
   color: #ffffff;
 }
 
-// General container styling
 .motorbike.container {
   display: flex;
   justify-content: space-between;
@@ -307,13 +303,11 @@ svg {
   margin-bottom: 20px;
 }
 
-// Price styling
 .motorbike-card__info p:nth-child(3) {
   font-weight: bold;
   color: #000000;
 }
 
-// Back to home link styling
 .motorbike-card__info a {
   display: inline-block;
   padding: 10px 20px;

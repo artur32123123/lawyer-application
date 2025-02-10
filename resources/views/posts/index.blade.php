@@ -26,13 +26,14 @@
                     <a class="post-info" href="{{ route('posts.show', $post->id) }}">Подробнее</a>
                      <div class="admin-actions">
                         @role('project-manager')
-                            <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
-                            <form action="{{ route('posts.destroy', $post->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Delete</button>
-                            </form>
-                        @endrole
+                        <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                        @endrole('project-manager')
+
                     </div>
                 </div>
             @endforeach
