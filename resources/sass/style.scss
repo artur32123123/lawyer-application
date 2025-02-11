@@ -115,7 +115,21 @@ header ul li a {
   &:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.265);
   }
+
+  .line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 10px;
+    .descount {
+        span {
+            text-decoration: line-through;
+        }
+    }
+  }
 }
+
 .motorbike-card-slider {
     border: 1px solid $border-color;
     max-width: 1000px;

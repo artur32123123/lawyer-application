@@ -21,8 +21,10 @@
                     @else
                         <img src="{{ asset('storage/') . '/../images/seeder/default.jpeg' }}" alt="image.png">
                     @endif
-                    <p style="color: rgb(255, 0, 0)">{{intval($post->price - $post->price / 100 * ($post->descount)) }}  {{ $post->descount }}</p>
-                    <p>{{ number_format($post->price, '0', '.', '.') . 'р.' }}</p>
+                    <div class="line">
+                        <p class="descount">Скидка {{ $post->descount }}%  <br> <span>{{intval($post->price - $post->price / 100 * ($post->descount)) }}</span>  </p>
+                        <p class="price">{{ number_format($post->price, '0', '.', '.') . 'р.' }}</p>
+                    </div>
                     <a class="post-info" href="{{ route('posts.show', $post->id) }}">Подробнее</a>
                      <div class="admin-actions">
                         @role('project-manager')
@@ -33,10 +35,10 @@
                             <button type="submit">Delete</button>
                         </form>
                         @endrole('project-manager')
-
                     </div>
                 </div>
             @endforeach
+            {{ $posts->links() }}
         </div>
     </section>
 </body>
