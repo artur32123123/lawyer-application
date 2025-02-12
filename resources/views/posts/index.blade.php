@@ -41,5 +41,6 @@
             {{ $posts->links() }}
         </div>
     </section>
+    <x-footer />
 </body>
 </html>
