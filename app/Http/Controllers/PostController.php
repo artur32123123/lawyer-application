@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\PostImage;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        // $post = Post::find(4);
+        // dd($post->post_images);
         $posts = Post::paginate(10);
         // dd($posts);
         return view('posts.index', compact('posts'));
@@ -26,11 +29,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->image; // inputname - это name поля из формы
-        $filecontent = $file->openFile()->fread($file->getSize()); // эта магия из стэковерфлоу
-        //что за openFile() - я не понимаю...
+        $file = $request->image;
+        $filecontent = $file->openFile()->fread($file->getSize());
         $filename = $file->getClientOriginalName();
-        // dd($filename);
         // $request->validate([
         //     'title' => 'required|max:255',
         //     'body' => 'required',
@@ -38,13 +39,17 @@ class PostController extends Controller
         //     'descount' => 'required',
         //     'image' => 'required|image',
         // ]);
-        Post::create([
-            'title' => $request->title,
-            'body' => $request->body,
-            'price' => $request->price,
-            'descount' => $request->descount,
-            'image' => $filename,
-        ]);
+        $post = new Post;
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->price = $request->price;
+        $post->descount = $request->descoun;
+        // dd($post->id);
+        $post_image = new PostImage();
+        $post_image->post_id = $post->id;
+        $post_image->image = $filename;
+        $post->$post_image->save();
+        $post->save();
         return redirect()->route('posts.index')
             ->with('success', 'Post created successfully.');
     }

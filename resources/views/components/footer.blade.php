@@ -7,20 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <footer>
-        <div class="container">
-            <div class="content">
-                <div class="content__left">
-                    <img src="{{ asset('images/jpeg/logo.jpeg') }}" alt="Logo">
-                    <p>Copyright 2022</p>
-                    
-                </div>
-                <div class="content__right">
-
-                </div>
-            </div>
+    <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__logo">
+            <img src="logo.png" alt="Логотип">
+          </div>
+          <div class="footer__nav">
+            <ul>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Услуги</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer__social">
+            <ul>
+              <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          <div class="footer__copyright">
+            &copy; 2023. Все права защищены.
+          </div>
         </div>
-    </footer>
+      </footer>
 
 
 </body>
