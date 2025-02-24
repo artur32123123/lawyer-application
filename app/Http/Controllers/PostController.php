@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
 use App\Models\PostImage;
 use App\Models\User;
@@ -27,29 +28,26 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        $file = $request->image;
-        $filecontent = $file->openFile()->fread($file->getSize());
-        $filename = $file->getClientOriginalName();
-        // $request->validate([
-        //     'title' => 'required|max:255',
-        //     'body' => 'required',
-        //     'price' => 'required',
-        //     'descount' => 'required',
-        //     'image' => 'required|image',
-        // ]);
+
         $post = new Post;
         $post->title = $request->title;
         $post->body = $request->body;
         $post->price = $request->price;
         $post->descount = $request->descoun;
-        // dd($post->id);
-        $post_image = new PostImage();
-        $post_image->post_id = $post->id;
-        $post_image->image = $filename;
-        $post->$post_image->save();
         $post->save();
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+        // dd($post->id);
+        PostImage::create([
+            'post_id' => $post->id,
+            'src' => $imageName,
+        ]);
+        // $post_image->post_id = $post->id;
+        // $post_image->src = $filename;
+        // $post_image->save();
+        // $post->$post_image->save();
         return redirect()->route('posts.index')
             ->with('success', 'Post created successfully.');
     }
