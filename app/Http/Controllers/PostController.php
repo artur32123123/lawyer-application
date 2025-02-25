@@ -6,6 +6,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
 use App\Models\PostImage;
 use App\Models\User;
+use App\Services\PostService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,26 +29,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostRequest $request)
+    public function store(StorePostRequest $request, PostService $postService)
     {
-
-        $post = new Post;
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->price = $request->price;
-        $post->descount = $request->descoun;
-        $post->save();
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images'), $imageName);
-        // dd($post->id);
-        PostImage::create([
-            'post_id' => $post->id,
-            'src' => $imageName,
-        ]);
-        // $post_image->post_id = $post->id;
-        // $post_image->src = $filename;
-        // $post_image->save();
-        // $post->$post_image->save();
+        $postService->createPost($request);
         return redirect()->route('posts.index')
             ->with('success', 'Post created successfully.');
     }
@@ -58,14 +42,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StorePostRequest $request, $id)
     {
-        $request->validate([
-            'title' => 'required|max:255',
-            'body' => 'required',
-            'price' => 'required',
-            'descount' => 'required',
-        ]);
         $post = Post::find($id);
         $post->update($request->all());
         return redirect()->route('posts.index')
