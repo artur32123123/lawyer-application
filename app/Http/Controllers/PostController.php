@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
-use App\Models\PostImage;
-use App\Models\User;
 use App\Services\PostService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -17,10 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $post = Post::find(4);
-        // dd($post->post_images);
         $posts = Post::paginate(10);
-        // dd($posts);
         return view('posts.index', compact('posts'));
     }
     /**
