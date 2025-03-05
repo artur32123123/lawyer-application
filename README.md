@@ -33,32 +33,32 @@ Request
 Request используется для валидации входных данных при создании и обновлении мотоциклов
 Middleware
 Middleware используется для защиты маршрутов от несанкционированного доступа
-Маршруты
-/ - главная страница
-/register - регистрация
-/login - авторизация
-/motorcycles - список мотоциклов
-/motorcycles/create - создание нового мотоцикла
-/motorcycles/{id} - просмотр информации о мотоцикле
-/motorcycles/{id}/edit - обновление информации о мотоцикле
-/motorcycles/{id}/delete - удаление мотоцикла
-API
-/api/motorcycles - список мотоциклов
-/api/motorcycles/{id} - информация о мотоцикле
-/api/motorcycles/create - создание нового мотоцикла
-/api/motorcycles/{id}/update - обновление информации о мотоцикле
-/api/motorcycles/{id}/delete - удаление мотоцикла
-Лицензия
-Этот проект распространяется под лицензией MIT.
+<h2>                                  Маршруты</h2>
+<ul>
+    <li> / - главная страница</li>
+    <li>/register - регистрация</li>
+    <li>/login - авторизация</li>
+    <li>/motorcycles - список мотоциклов</li>
+    <li>/motorcycles/create - создание нового мотоцикла</li>
+    <li>/motorcycles/{id} - просмотр информации о мотоцикле</li>
+    <li>/motorcycles/{id}/edit - обновление информации о мотоцикле</li>
+    <li>/motorcycles/{id}/delete - удаление мотоцикла</li>
+</ul>
+
+<h2>                                  API</h2>
+<ul>
+    <li>/api/motorcycles - список мотоциклов</li>
+    <li>/api/motorcycles/{id} - информация о мотоцикле</li>
+    <li>/api/motorcycles/create - создание нового мотоцикла</li>
+    <li>/api/motorcycles/{id}/update - обновление информации о мотоцикле</li>
+    <li>/api/motorcycles/{id}/delete - удаление мотоцикла</li>
+</ul>
 
 Авторы
-[Ваше имя] - основной разработчик
-Благодарности
-Laravel - за предоставление мощного и гибкого фреймворка для разработки веб-приложений
-MySQL - за предоставление надежной и производительной базы данных
+Артур Мрикаев - основной разработчик
 Контакты
-Email: [ваш email]
-GitHub: [ваш GitHub профиль]
+Email: ffilosssoff@gmail.com
+GitHub: https://github.com/artur32123123
 История изменений
 1.0.0 - первая версия проекта
 1.1.0 - добавлена поддержка API
