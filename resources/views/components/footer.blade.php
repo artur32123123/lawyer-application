@@ -10,7 +10,8 @@
     <footer class="footer">
         <div class="footer__container">
           <div class="footer__logo">
-            <img src="logo.png" alt="Логотип">
+                    <img src="{{ asset('images/jpeg/logo.jpeg') }}" alt="Logo">
+
           </div>
           <div class="footer__nav">
             <ul>
